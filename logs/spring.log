@@ -1,0 +1,189 @@
+2024-10-06T10:59:56.203-03:00  INFO 19329 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack/, optional: false
+2024-10-06T10:59:56.224-03:00 ERROR 19329 --- [spring-boot-localstack] [main] o.s.boot.SpringApplication               : Application run failed
+
+io.awspring.cloud.paramstore.AwsParamStorePropertySources$AwsParameterPropertySourceNotFoundException: com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException: The security token included in the request is invalid. (Service: AWSSimpleSystemsManagement; Status Code: 400; Error Code: UnrecognizedClientException; Request ID: 595046d4-c059-4cef-94e7-79761c69d74d; Proxy: null)
+	at io.awspring.cloud.paramstore.AwsParamStorePropertySources.createPropertySource(AwsParamStorePropertySources.java:105) ~[spring-cloud-aws-parameter-store-config-2.4.2.jar:2.4.2]
+	at io.awspring.cloud.paramstore.AwsParamStorePropertySourceLocator.locate(AwsParamStorePropertySourceLocator.java:87) ~[spring-cloud-aws-parameter-store-config-2.4.2.jar:2.4.2]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:50) ~[spring-cloud-context-4.1.4.jar:4.1.4]
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:46) ~[spring-cloud-context-4.1.4.jar:4.1.4]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.doInitialize(PropertySourceBootstrapConfiguration.java:120) ~[spring-cloud-context-4.1.4.jar:4.1.4]
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:110) ~[spring-cloud-context-4.1.4.jar:4.1.4]
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:627) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:401) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.4.jar:3.3.4]
+	at br.com.mariaschwinn.SpringBootLocalstackApplication.main(SpringBootLocalstackApplication.java:10) ~[classes/:na]
+Caused by: com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException: The security token included in the request is invalid. (Service: AWSSimpleSystemsManagement; Status Code: 400; Error Code: UnrecognizedClientException; Request ID: 595046d4-c059-4cef-94e7-79761c69d74d; Proxy: null)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleErrorResponse(AmazonHttpClient.java:1879) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleServiceErrorResponse(AmazonHttpClient.java:1418) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1387) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1157) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541) ~[aws-java-sdk-core-1.12.266.jar:na]
+	at com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClient.doInvoke(AWSSimpleSystemsManagementClient.java:10857) ~[aws-java-sdk-ssm-1.12.266.jar:na]
+	at com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClient.invoke(AWSSimpleSystemsManagementClient.java:10824) ~[aws-java-sdk-ssm-1.12.266.jar:na]
+	at com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClient.invoke(AWSSimpleSystemsManagementClient.java:10813) ~[aws-java-sdk-ssm-1.12.266.jar:na]
+	at com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClient.executeGetParametersByPath(AWSSimpleSystemsManagementClient.java:6568) ~[aws-java-sdk-ssm-1.12.266.jar:na]
+	at com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClient.getParametersByPath(AWSSimpleSystemsManagementClient.java:6537) ~[aws-java-sdk-ssm-1.12.266.jar:na]
+	at io.awspring.cloud.paramstore.AwsParamStorePropertySource.getParameters(AwsParamStorePropertySource.java:69) ~[spring-cloud-aws-parameter-store-config-2.4.2.jar:2.4.2]
+	at io.awspring.cloud.paramstore.AwsParamStorePropertySource.init(AwsParamStorePropertySource.java:55) ~[spring-cloud-aws-parameter-store-config-2.4.2.jar:2.4.2]
+	at io.awspring.cloud.paramstore.AwsParamStorePropertySources.createPropertySource(AwsParamStorePropertySources.java:99) ~[spring-cloud-aws-parameter-store-config-2.4.2.jar:2.4.2]
+	... 11 common frames omitted
+
+2024-10-06T11:00:34.265-03:00  INFO 19519 --- [spring-boot-localstack] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application/'}]
+2024-10-06T11:00:34.281-03:00  INFO 19519 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : The following 1 profile is active: "localstack"
+2024-10-06T11:00:34.292-03:00  INFO 19519 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack_localstack/, optional: false
+2024-10-06T11:00:34.292-03:00  INFO 19519 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack/, optional: false
+2024-10-06T11:00:34.292-03:00  INFO 19519 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application_localstack/, optional: false
+2024-10-06T11:00:34.293-03:00  INFO 19519 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application/, optional: false
+2024-10-06T11:00:34.638-03:00  INFO 19519 --- [spring-boot-localstack] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=50761e7a-2bbd-3857-a5db-28572531df9b
+2024-10-06T11:00:34.833-03:00  INFO 19519 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-06T11:00:34.844-03:00  INFO 19519 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-06T11:00:34.845-03:00  INFO 19519 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-06T11:00:34.889-03:00  INFO 19519 --- [spring-boot-localstack] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-06T11:00:34.889-03:00  INFO 19519 --- [spring-boot-localstack] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2024-10-06T11:00:35.232-03:00  INFO 19519 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-06T11:00:35.269-03:00  INFO 19519 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : Started SpringBootLocalstackApplication in 3.231 seconds (process running for 3.564)
+2024-10-06T11:15:45.308-03:00  INFO 23355 --- [spring-boot-localstack] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application/'}]
+2024-10-06T11:15:45.324-03:00  INFO 23355 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : The following 1 profile is active: "localstack"
+2024-10-06T11:15:45.336-03:00  INFO 23355 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack_localstack/, optional: false
+2024-10-06T11:15:45.336-03:00  INFO 23355 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack/, optional: false
+2024-10-06T11:15:45.336-03:00  INFO 23355 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application_localstack/, optional: false
+2024-10-06T11:15:45.336-03:00  INFO 23355 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application/, optional: false
+2024-10-06T11:15:45.723-03:00  INFO 23355 --- [spring-boot-localstack] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=942b1705-8dbb-389f-9159-abfe68621a8f
+2024-10-06T11:15:45.941-03:00  INFO 23355 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-06T11:15:45.955-03:00  INFO 23355 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-06T11:15:45.955-03:00  INFO 23355 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-06T11:15:46.007-03:00  INFO 23355 --- [spring-boot-localstack] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-06T11:15:46.007-03:00  INFO 23355 --- [spring-boot-localstack] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 671 ms
+2024-10-06T11:15:46.055-03:00  WARN 23355 --- [spring-boot-localstack] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'parameterStoreConfiguration': Injection of autowired dependencies failed
+2024-10-06T11:15:46.056-03:00  INFO 23355 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-06T11:15:46.071-03:00  INFO 23355 --- [spring-boot-localstack] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-06T11:15:46.087-03:00 ERROR 23355 --- [spring-boot-localstack] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'parameterStoreConfiguration': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.4.jar:3.3.4]
+	at br.com.mariaschwinn.SpringBootLocalstackApplication.main(SpringBootLocalstackApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'helloWorld' in value "${helloWorld}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:964) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.1.13.jar:6.1.13]
+	... 17 common frames omitted
+
+2024-10-06T11:16:05.935-03:00  INFO 23526 --- [spring-boot-localstack] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application/'}]
+2024-10-06T11:16:05.951-03:00  INFO 23526 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : The following 1 profile is active: "localstack"
+2024-10-06T11:16:05.965-03:00  INFO 23526 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack_localstack/, optional: false
+2024-10-06T11:16:05.965-03:00  INFO 23526 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack/, optional: false
+2024-10-06T11:16:05.966-03:00  INFO 23526 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application_localstack/, optional: false
+2024-10-06T11:16:05.966-03:00  INFO 23526 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application/, optional: false
+2024-10-06T11:16:06.302-03:00  INFO 23526 --- [spring-boot-localstack] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=942b1705-8dbb-389f-9159-abfe68621a8f
+2024-10-06T11:16:06.476-03:00  INFO 23526 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-06T11:16:06.487-03:00  INFO 23526 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-06T11:16:06.487-03:00  INFO 23526 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-06T11:16:06.532-03:00  INFO 23526 --- [spring-boot-localstack] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-06T11:16:06.533-03:00  INFO 23526 --- [spring-boot-localstack] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 567 ms
+2024-10-06T11:16:06.571-03:00  WARN 23526 --- [spring-boot-localstack] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'parameterStoreConfiguration': Injection of autowired dependencies failed
+2024-10-06T11:16:06.573-03:00  INFO 23526 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-10-06T11:16:06.585-03:00  INFO 23526 --- [spring-boot-localstack] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-06T11:16:06.599-03:00 ERROR 23526 --- [spring-boot-localstack] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'parameterStoreConfiguration': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:515) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1439) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.4.jar:3.3.4]
+	at br.com.mariaschwinn.SpringBootLocalstackApplication.main(SpringBootLocalstackApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'helloWorld' in value "${helloWorld}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:964) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.1.13.jar:6.1.13]
+	... 17 common frames omitted
+
+2024-10-06T11:17:23.612-03:00  INFO 24021 --- [spring-boot-localstack] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application/'}]
+2024-10-06T11:17:23.630-03:00  INFO 24021 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : The following 1 profile is active: "localstack"
+2024-10-06T11:17:23.640-03:00  INFO 24021 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack_localstack/, optional: false
+2024-10-06T11:17:23.640-03:00  INFO 24021 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack/, optional: false
+2024-10-06T11:17:23.640-03:00  INFO 24021 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application_localstack/, optional: false
+2024-10-06T11:17:23.640-03:00  INFO 24021 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application/, optional: false
+2024-10-06T11:17:23.994-03:00  INFO 24021 --- [spring-boot-localstack] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=942b1705-8dbb-389f-9159-abfe68621a8f
+2024-10-06T11:17:24.189-03:00  INFO 24021 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-06T11:17:24.200-03:00  INFO 24021 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-06T11:17:24.201-03:00  INFO 24021 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-06T11:17:24.248-03:00  INFO 24021 --- [spring-boot-localstack] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-06T11:17:24.249-03:00  INFO 24021 --- [spring-boot-localstack] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 608 ms
+2024-10-06T11:17:24.555-03:00  INFO 24021 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-06T11:17:24.591-03:00  INFO 24021 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : Started SpringBootLocalstackApplication in 2.219 seconds (process running for 2.493)
+2024-10-06T11:17:31.686-03:00  INFO 24160 --- [spring-boot-localstack] [main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/spring-boot-localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application_localstack/'}, BootstrapPropertySource {name='bootstrapProperties-/config/application/'}]
+2024-10-06T11:17:31.705-03:00  INFO 24160 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : The following 1 profile is active: "localstack"
+2024-10-06T11:17:31.717-03:00  INFO 24160 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack_localstack/, optional: false
+2024-10-06T11:17:31.718-03:00  INFO 24160 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/spring-boot-localstack/, optional: false
+2024-10-06T11:17:31.718-03:00  INFO 24160 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application_localstack/, optional: false
+2024-10-06T11:17:31.718-03:00  INFO 24160 --- [spring-boot-localstack] [main] i.a.c.p.AwsParamStorePropertySources     : Loading property from AWS Parameter Store with name: /config/application/, optional: false
+2024-10-06T11:17:32.078-03:00  INFO 24160 --- [spring-boot-localstack] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=942b1705-8dbb-389f-9159-abfe68621a8f
+2024-10-06T11:17:32.269-03:00  INFO 24160 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-06T11:17:32.279-03:00  INFO 24160 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-06T11:17:32.280-03:00  INFO 24160 --- [spring-boot-localstack] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-06T11:17:32.322-03:00  INFO 24160 --- [spring-boot-localstack] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-06T11:17:32.323-03:00  INFO 24160 --- [spring-boot-localstack] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 605 ms
+2024-10-06T11:17:32.691-03:00  INFO 24160 --- [spring-boot-localstack] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-06T11:17:32.728-03:00  INFO 24160 --- [spring-boot-localstack] [main] b.c.m.SpringBootLocalstackApplication    : Started SpringBootLocalstackApplication in 2.43 seconds (process running for 2.755)
+2024-10-06T11:22:52.195-03:00  INFO 24160 --- [spring-boot-localstack] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-06T11:22:52.195-03:00  INFO 24160 --- [spring-boot-localstack] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-06T11:22:52.196-03:00  INFO 24160 --- [spring-boot-localstack] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
