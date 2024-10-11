@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.sqs.service;
+package br.com.mariaschwinn.service;
 
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import io.awspring.cloud.messaging.core.QueueMessagingTemplate;

@@ -1,7 +1,7 @@
 package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.dto.S3FileDTO;
-import br.com.mariaschwinn.s3.service.S3FileService;
+import br.com.mariaschwinn.service.S3FileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;

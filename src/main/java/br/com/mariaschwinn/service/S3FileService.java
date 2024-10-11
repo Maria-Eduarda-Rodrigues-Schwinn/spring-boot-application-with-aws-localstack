@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.s3.service;
+package br.com.mariaschwinn.service;
 
 import br.com.mariaschwinn.exception.FileListenerException;
 import com.amazonaws.AmazonServiceException;

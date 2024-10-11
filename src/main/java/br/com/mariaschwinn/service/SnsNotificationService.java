@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.sns.service;
+package br.com.mariaschwinn.service;
 
 import com.amazonaws.services.sns.AmazonSNS;
 import io.awspring.cloud.messaging.core.NotificationMessagingTemplate;

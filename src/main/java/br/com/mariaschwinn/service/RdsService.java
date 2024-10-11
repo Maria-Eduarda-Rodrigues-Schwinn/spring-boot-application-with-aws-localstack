@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.service;
+package br.com.mariaschwinn.service;
 
 import br.com.mariaschwinn.dto.StudentRequest;
 import br.com.mariaschwinn.dto.StudentResponse;
