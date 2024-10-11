@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.s3.dto;
+package br.com.mariaschwinn.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

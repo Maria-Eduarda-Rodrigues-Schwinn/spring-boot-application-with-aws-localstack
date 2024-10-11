@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.dto;
+package br.com.mariaschwinn.dto;
 
 import br.com.mariaschwinn.rds.utils.DataDeserializer;
 import br.com.mariaschwinn.rds.utils.DataSerializer;

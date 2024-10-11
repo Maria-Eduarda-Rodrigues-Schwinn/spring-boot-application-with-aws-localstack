@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.dto;
+package br.com.mariaschwinn.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 

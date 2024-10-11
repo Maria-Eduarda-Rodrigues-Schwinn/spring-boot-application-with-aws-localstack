@@ -1,7 +1,7 @@
 package br.com.mariaschwinn.rds.service;
 
-import br.com.mariaschwinn.rds.dto.StudentRequest;
-import br.com.mariaschwinn.rds.dto.StudentResponse;
+import br.com.mariaschwinn.dto.StudentRequest;
+import br.com.mariaschwinn.dto.StudentResponse;
 import br.com.mariaschwinn.rds.entity.Student;
 import br.com.mariaschwinn.rds.exception.StudentException;
 import br.com.mariaschwinn.rds.repository.RdsRepository;

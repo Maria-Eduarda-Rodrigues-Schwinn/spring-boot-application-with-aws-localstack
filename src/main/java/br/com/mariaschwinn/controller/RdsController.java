@@ -1,7 +1,7 @@
 package br.com.mariaschwinn.controller;
 
-import br.com.mariaschwinn.rds.dto.StudentRequest;
-import br.com.mariaschwinn.rds.dto.StudentResponse;
+import br.com.mariaschwinn.dto.StudentRequest;
+import br.com.mariaschwinn.dto.StudentResponse;
 import br.com.mariaschwinn.rds.service.RdsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
