@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "25a5eebf-85b6-4f88-87af-63eb297f1014",
+		"name": "Spring Boot + LocalStack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38493555"
+	},
+	"item": [
+		{
+			"name": "Parameter Store",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/parameterStoreConfiguration",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"parameterStoreConfiguration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Secrets Manager",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/secretsManagerConfiguration",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"secretsManagerConfiguration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create File S3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/s3/files",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"s3",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search File S3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/s3/files?fileName=prefixo",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"s3",
+						"files"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": "prefixo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File Content S3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/s3/files/{{fileName}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"s3",
+						"files",
+						"{{fileName}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SendMessage SQS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/sendMessage?message=Mensagem de teste",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"sendMessage"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "Mensagem de teste"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SendMessage SNS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/topicMessage?message=Mensagem de teste",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"topicMessage"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "Mensagem de teste"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student RDS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"João da Silva\",\n  \"cpf\": \"123.456.789-00\",\n  \"rg\": \"MG-12.345.678\",\n  \"birth_date\": \"2000-01-01\",\n  \"address\": \"Rua Exemplo, 123\",\n  \"cep\": \"12345-678\",\n  \"city\": \"Belo Horizonte\",\n  \"state\": \"MG\",\n  \"course\": \"Engenharia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/student",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Student RDS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/student?name=ilva",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"student"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ilva"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student RDS",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id_student\": 1,\n  \"name\": \"João da Silva\",\n  \"cpf\": \"123.456.789-00\",\n  \"rg\": \"MG-12.345-678\",\n  \"birth_date\": \"2000-01-01\",\n  \"address\": \"Rua Atualizada, 456\",\n  \"cep\": \"12345-678\",\n  \"city\": \"Belo Horizonte\",\n  \"state\": \"MG\",\n  \"course\": \"Engenharia de Software\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/student",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"student"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "fileName",
+			"value": "prefixo-4934886322234181174.txt",
+			"type": "default"
+		}
+	]
+}
