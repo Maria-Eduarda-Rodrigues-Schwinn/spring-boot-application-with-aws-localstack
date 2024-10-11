@@ -1,6 +1,6 @@
 package br.com.mariaschwinn.rds.repository;
 
-import br.com.mariaschwinn.rds.entity.Student;
+import br.com.mariaschwinn.entity.Student;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

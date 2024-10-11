@@ -2,7 +2,7 @@ package br.com.mariaschwinn.rds.utils;
 
 import br.com.mariaschwinn.dto.StudentRequest;
 import br.com.mariaschwinn.dto.StudentResponse;
-import br.com.mariaschwinn.rds.entity.Student;
+import br.com.mariaschwinn.entity.Student;
 
 public class ConvertStudent {
 

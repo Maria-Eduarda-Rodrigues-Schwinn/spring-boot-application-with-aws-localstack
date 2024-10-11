@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.entity;
+package br.com.mariaschwinn.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
