@@ -4,8 +4,8 @@ import br.com.mariaschwinn.dto.StudentRequest;
 import br.com.mariaschwinn.dto.StudentResponse;
 import br.com.mariaschwinn.entity.Student;
 import br.com.mariaschwinn.exception.StudentException;
-import br.com.mariaschwinn.rds.repository.RdsRepository;
 import br.com.mariaschwinn.rds.utils.ConvertStudent;
+import br.com.mariaschwinn.repository.RdsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

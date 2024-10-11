@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.repository;
+package br.com.mariaschwinn.repository;
 
 import br.com.mariaschwinn.entity.Student;
 import org.springframework.data.repository.CrudRepository;
