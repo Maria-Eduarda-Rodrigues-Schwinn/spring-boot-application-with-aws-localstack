@@ -1,30 +1,20 @@
 package br.com.mariaschwinn.service;
 
-import com.amazonaws.services.sqs.AmazonSQSAsync;
-import io.awspring.cloud.messaging.core.QueueMessagingTemplate;
+import br.com.mariaschwinn.service.sqs.MessageSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class SqsMessageService {
 
-    @Value("${sqsQueueName}")
-    private String queueName;
-
-    private final QueueMessagingTemplate queueMessagingTemplate;
+    private final MessageSenderService messageSenderService;
 
     @Autowired
-    public SqsMessageService(AmazonSQSAsync amazonSQSAsync) {
-        this.queueMessagingTemplate = new QueueMessagingTemplate(amazonSQSAsync);
+    public SqsMessageService(MessageSenderService messageSenderService) {
+        this.messageSenderService = messageSenderService;
     }
 
     public void sendMessage(String message) {
-        this.queueMessagingTemplate.send(
-                queueName,
-                MessageBuilder
-                        .withPayload(message)
-                        .build());
+        messageSenderService.send(message);
     }
 }
