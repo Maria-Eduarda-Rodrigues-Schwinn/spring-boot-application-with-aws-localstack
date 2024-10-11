@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.sqs.listener;
+package br.com.mariaschwinn.listener;
 
 import io.awspring.cloud.messaging.listener.annotation.SqsListener;
 import lombok.extern.slf4j.Slf4j;
