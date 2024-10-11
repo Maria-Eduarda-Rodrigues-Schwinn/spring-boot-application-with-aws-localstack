@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.ssm.configuration;
+package br.com.mariaschwinn.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

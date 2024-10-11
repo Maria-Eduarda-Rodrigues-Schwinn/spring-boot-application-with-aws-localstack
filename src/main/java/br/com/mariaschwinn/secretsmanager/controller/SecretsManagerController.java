@@ -1,6 +1,6 @@
 package br.com.mariaschwinn.secretsmanager.controller;
 
-import br.com.mariaschwinn.secretsmanager.configuration.SecretsManagerConfiguration;
+import br.com.mariaschwinn.configuration.SecretsManagerConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
