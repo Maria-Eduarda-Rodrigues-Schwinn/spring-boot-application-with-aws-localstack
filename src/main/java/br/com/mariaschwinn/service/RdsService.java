@@ -2,53 +2,43 @@ package br.com.mariaschwinn.service;
 
 import br.com.mariaschwinn.dto.StudentRequest;
 import br.com.mariaschwinn.dto.StudentResponse;
-import br.com.mariaschwinn.entity.Student;
-import br.com.mariaschwinn.exception.StudentException;
-import br.com.mariaschwinn.repository.RdsRepository;
-import br.com.mariaschwinn.utils.ConvertStudent;
+import br.com.mariaschwinn.service.rds.CreateStudentService;
+import br.com.mariaschwinn.service.rds.DeleteStudentService;
+import br.com.mariaschwinn.service.rds.SearchStudentService;
+import br.com.mariaschwinn.service.rds.UpdateStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class RdsService {
 
-    private static final String STUDENT_NOT_FOUND = "Aluno não encontrado";
+    @Autowired
+    private CreateStudentService createStudentService;
 
     @Autowired
-    private RdsRepository rdsRepository;
+    private UpdateStudentService updateStudentService;
+
+    @Autowired
+    private SearchStudentService searchStudentService;
+
+    @Autowired
+    private DeleteStudentService deleteStudentService;
 
     public StudentResponse createStudent(StudentRequest studentRequest) {
-        Student newStudent = ConvertStudent.toStudent(studentRequest);
-
-        return ConvertStudent.toStudentResponse(rdsRepository.save(newStudent));
+        return createStudentService.create(studentRequest);
     }
 
     public StudentResponse updateStudent(StudentRequest studentRequest) {
-        if (rdsRepository.findById(studentRequest.getIdStudent()).isEmpty())
-            throw new StudentException(STUDENT_NOT_FOUND);
-
-        Student newStudent = ConvertStudent.toStudent(studentRequest);
-        return ConvertStudent.toStudentResponse(rdsRepository.save(newStudent));
+        return updateStudentService.update(studentRequest);
     }
 
     public List<StudentResponse> searchStudent(String name) {
-        return rdsRepository.findByNameContainingIgnoreCase(name)
-                .stream().map(student -> ConvertStudent.toStudentResponse(rdsRepository.save(student)))
-                .collect(Collectors.toList());
+        return searchStudentService.search(name);
     }
 
     public StudentResponse deleteStudent(Integer studentId) {
-        if (rdsRepository.findById(studentId).isEmpty())
-            throw new StudentException(STUDENT_NOT_FOUND);
-
-        StudentResponse studentResponse = new StudentResponse();
-        studentResponse.setIdStudent(studentId);
-
-        rdsRepository.deleteById(studentId);
-
-        return studentResponse;
+        return deleteStudentService.delete(studentId);
     }
 }
