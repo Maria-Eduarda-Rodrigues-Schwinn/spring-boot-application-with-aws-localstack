@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.exception;
+package br.com.mariaschwinn.exception;
 
 public class StudentException extends RuntimeException {
 

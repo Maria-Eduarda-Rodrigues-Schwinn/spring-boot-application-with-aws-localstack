@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.s3.exception;
+package br.com.mariaschwinn.exception;
 
 public class FileListenerException extends Exception {
 

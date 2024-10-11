@@ -1,6 +1,6 @@
 package br.com.mariaschwinn.s3.service;
 
-import br.com.mariaschwinn.s3.exception.FileListenerException;
+import br.com.mariaschwinn.exception.FileListenerException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ObjectMetadata;
