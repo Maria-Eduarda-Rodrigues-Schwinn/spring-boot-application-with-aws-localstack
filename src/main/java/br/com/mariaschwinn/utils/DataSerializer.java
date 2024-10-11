@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.utils;
+package br.com.mariaschwinn.utils;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

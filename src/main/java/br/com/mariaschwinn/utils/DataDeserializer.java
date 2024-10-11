@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.utils;
+package br.com.mariaschwinn.utils;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;

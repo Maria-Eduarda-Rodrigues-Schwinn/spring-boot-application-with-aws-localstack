@@ -1,7 +1,7 @@
 package br.com.mariaschwinn.dto;
 
-import br.com.mariaschwinn.rds.utils.DataDeserializer;
-import br.com.mariaschwinn.rds.utils.DataSerializer;
+import br.com.mariaschwinn.utils.DataDeserializer;
+import br.com.mariaschwinn.utils.DataSerializer;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
