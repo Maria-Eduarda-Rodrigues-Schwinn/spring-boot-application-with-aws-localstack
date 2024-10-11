@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.sns.controller;
+package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.sns.service.SnsNotificationService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.rds.controller;
+package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.rds.dto.StudentRequest;
 import br.com.mariaschwinn.rds.dto.StudentResponse;
@@ -16,7 +16,7 @@ public class RdsController {
 
     @Autowired
     private RdsService rdsService;
-    
+
     @GetMapping(value = "/student", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<StudentResponse>> searchStudent(
             @RequestParam(value = "name") String name) {

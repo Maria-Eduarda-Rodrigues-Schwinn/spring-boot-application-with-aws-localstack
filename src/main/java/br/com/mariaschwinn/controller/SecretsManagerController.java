@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.secretsmanager.controller;
+package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.configuration.SecretsManagerConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;

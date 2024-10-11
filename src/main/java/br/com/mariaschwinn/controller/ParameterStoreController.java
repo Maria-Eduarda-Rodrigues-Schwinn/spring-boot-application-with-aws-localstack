@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.ssm.controller;
+package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.configuration.ParameterStoreConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;

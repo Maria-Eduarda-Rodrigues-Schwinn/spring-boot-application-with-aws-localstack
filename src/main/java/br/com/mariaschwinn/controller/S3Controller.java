@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.s3.controller;
+package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.s3.dto.S3FileDTO;
 import br.com.mariaschwinn.s3.service.S3FileService;

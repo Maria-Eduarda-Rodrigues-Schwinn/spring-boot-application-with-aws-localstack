@@ -1,4 +1,4 @@
-package br.com.mariaschwinn.sqs.controller;
+package br.com.mariaschwinn.controller;
 
 import br.com.mariaschwinn.sqs.service.SqsMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
